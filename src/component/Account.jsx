@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faStarEmtpy } from '@fortawesome/free-regular-svg-icons';
 
 const Account = ({ account }) => {
     return (
         <div className="account">
             <span>{account.username}</span>
             <span>{account.email}</span>
+            <FontAwesomeIcon icon={account.favorite ? faStar : faStarEmtpy} />
         </div>
     );
 };

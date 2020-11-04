@@ -15,7 +15,7 @@ const useAccountFetcher = () => {
                 category: 'facebook',
                 username: 'user_2',
                 email: 'user_2@facebook.com',
-                favorite: false,
+                favorite: true,
                 last_accessed: 'abc',
             },
             {
