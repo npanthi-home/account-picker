@@ -8,7 +8,7 @@ const usePaginator = (elements, pageSize) => {
     }
 
     const hasNext = () => {
-        return currentPageNumber < (elements.length / pageSize);
+        return currentPageNumber < Math.floor(elements.length / pageSize);
     }
 
     const next = () => {

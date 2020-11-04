@@ -18,6 +18,7 @@ const AccountPicker = ({ accounts }) => {
                 matchResult={matchAccount}
                 groupBy='category'
                 sortBy={lastAccessedComparator}
+                pageSize={3}
             />
         </>
     );

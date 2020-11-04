@@ -22,3 +22,4 @@ consumer of the component.
 2. Get all accounts by page.
 3. Mark as favorite.
 4. Access account.
+5. Create email account.
