@@ -1,11 +1,11 @@
 import React from 'react';
 
-const withOrder = (WrappedSearchResults, sortBy) => {
+const withOrder = (WrappedResults, sortBy) => {
     const SortedSearchResults = ({ elements, ...props}) => {
         const sortedResults = sortBy ? elements.sort((element1, element2) => sortBy(element1, element2)) : elements;
 
         return (
-            <WrappedSearchResults
+            <WrappedResults
                 {...props}
                 elements={sortedResults}
             />

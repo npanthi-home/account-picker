@@ -9,6 +9,7 @@ const Account = ({ account }) => {
         <div className="account">
             <span>{account.username}</span>
             <span>{account.email}</span>
+            <span>{account.lastAccessed}</span>
             <FontAwesomeIcon icon={account.favorite ? faStar : faStarEmtpy} />
         </div>
     );

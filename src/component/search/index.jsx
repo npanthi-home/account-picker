@@ -2,22 +2,24 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import SearchInput from './SearchInput';
 import withPagination from './withPagination';
-import SearchResults from './SearchResults';
+import Results from './Results';
 import withCategorization from './withCategorization';
 import withOrder from './withOrder';
+import withSearchFilter from './withSearchFilter';
 
 const Search = ({ elements, matchResult, renderResult, groupBy, sortBy, pageSize }) => {
     const [searchKeyword, setSearchKeyword] = useState('');
     const match = (element) => matchResult(searchKeyword, element);
-
-    const SortedResults = withOrder(SearchResults, sortBy);
-    const CategorizedResults = withCategorization(SortedResults, groupBy);
+    
+    const CategorizedResults = withCategorization(Results, groupBy);
     const PaginatedResults = withPagination(CategorizedResults, pageSize);
+    const SortedResults = withOrder(PaginatedResults, sortBy);
+    const SearchedResults = withSearchFilter(SortedResults, match)
 
     return (
         <>
             <SearchInput onSearch={(keyword) => setSearchKeyword(keyword)} />
-            <PaginatedResults 
+            <SearchedResults 
                 elements={elements}
                 matchResult={match}
                 renderResult={renderResult}
