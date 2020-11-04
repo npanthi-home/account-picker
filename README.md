@@ -5,7 +5,6 @@ Create  a reusable component which can be configured as per the requirements of
 consumer of the component.
 
 ### Configurable features:
-
 1. The accounts can be grouped by categories. (e.g. if same component has to be used by facebook etc.)
 2. The accounts/ids can be searchable. (Assuming user has 50+ accounts)
 3. The list can be paginated.
@@ -16,3 +15,9 @@ consumer of the component.
 8. Theme (color, logo etc).
 9. Option to create an account/email-id if required.
 10. API implementation for getting the account/data list.
+
+### APIs
+1. Get all accounts.
+2. Get all accounts by page.
+3. Mark as favorite.
+4. Access account.

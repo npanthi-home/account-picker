@@ -8,13 +8,15 @@ const AccountPicker = ({ accounts }) => {
     const matchAccount = (keyword, account) => {
         return account.email.includes(keyword) || account.username.includes(keyword);
     }
+    const lastAccessedComparator = (account1, account2) => account1.lastAccessed - account2.lastAccessed;
 
     return (
         <>
             <Search
                 elements={accounts}
                 renderResult={renderAccount}
-                matchResult={matchAccount} 
+                matchResult={matchAccount}
+                groupBy='category'
             />
         </>
     );
@@ -23,7 +25,7 @@ const AccountPicker = ({ accounts }) => {
 AccountPicker.propTypes = {
     accounts: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string,
-        category: PropTypes.oneOf(['facebook', 'google', 'twitter', 'unknown']),
+        category: PropTypes.oneOf(['facebook', 'google', 'twitter', 'others']),
         username: PropTypes.string,
         email: PropTypes.string,
         favorite: PropTypes.bool,
