@@ -17,13 +17,13 @@ const Search = ({ elements, matchResult, renderResult, groupBy, sortBy }) => {
                         matchResult={(element) => matchResult(searchKeyword, element)}
                         renderResult={renderResult}
                         groupBy={groupBy}
-                        sortyBy={sortBy}
+                        sortBy={sortBy}
                     />)
                     : (<SearchResults
                         elements={elements}
                         matchResult={(element) => matchResult(searchKeyword, element)}
                         renderResult={renderResult}
-                        sortyBy={sortBy}
+                        sortBy={sortBy}
                     />)
             }
         </>

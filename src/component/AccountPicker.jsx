@@ -17,6 +17,7 @@ const AccountPicker = ({ accounts }) => {
                 renderResult={renderAccount}
                 matchResult={matchAccount}
                 groupBy='category'
+                sortBy={lastAccessedComparator}
             />
         </>
     );

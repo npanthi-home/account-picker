@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SearchResults = ({ elements, matchResult, renderResult, sortBy }) => {
-
     const sortedResults = sortBy ? elements.sort((element1, element2) => sortBy(element1, element2)) : elements;
 
     const results = sortedResults

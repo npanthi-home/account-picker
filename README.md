@@ -18,6 +18,7 @@ consumer of the component.
 
 ### APIs
 1. Get all accounts.
+2. Get all accounts by platform.
 2. Get all accounts by page.
 3. Mark as favorite.
 4. Access account.

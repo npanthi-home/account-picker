@@ -14,7 +14,7 @@ const GroupedSearchResults = ({ elements, matchResult, renderResult, groupBy, so
                     elements={groupedElements[groupName]}
                     matchResult={(element) => matchResult(element)}
                     renderResult={renderResult}
-                    sortyBy={sortBy}
+                    sortBy={sortBy}
                 />
             </div>);
         });

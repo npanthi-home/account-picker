@@ -8,7 +8,7 @@ const useAccountFetcher = () => {
                 username: 'user_1',
                 email: 'user_1@facebook.com',
                 favorite: false,
-                last_accessed: 'abc',
+                lastAccessed:new Date().getTime(),
             },
             {
                 id: '2',
@@ -16,7 +16,7 @@ const useAccountFetcher = () => {
                 username: 'user_2',
                 email: 'user_2@facebook.com',
                 favorite: true,
-                last_accessed: 'abc',
+                lastAccessed:new Date().getTime() + 1000,
             },
             {
                 id: '3',
@@ -24,7 +24,7 @@ const useAccountFetcher = () => {
                 username: 'user_3',
                 email: 'user_3@facebook.com',
                 favorite: false,
-                last_accessed: 'abc',
+                lastAccessed: new Date().getTime() + 100,
             },
             {
                 id: '4',
@@ -32,7 +32,7 @@ const useAccountFetcher = () => {
                 username: 'user_1',
                 email: 'user_1@google.com',
                 favorite: false,
-                last_accessed: 'abc',
+                lastAccessed: new Date().getTime() + 500,
             },
             {
                 id: '5',
@@ -40,7 +40,7 @@ const useAccountFetcher = () => {
                 username: 'user_1',
                 email: 'user_1@twitter.com',
                 favorite: false,
-                last_accessed: 'abc',
+                lastAccessed: new Date().getTime() + 31,
             }
         ];
     }
