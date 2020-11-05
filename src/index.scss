@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap');
+@import './styles/colors.scss';
+@import './styles/fonts.scss';
+
+body {
+  font-family: $font-montserrat;
+  font-size: 16px;
+  background: $extra-dark;
+  color: $extra-light;
+}

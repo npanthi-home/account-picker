@@ -10,12 +10,16 @@ const withPagination = (WrappedResults, pageSize) => {
 
         return (
             <>
-                <WrappedResults
-                    {...props}
-                    elements={getPageElements()}
-                />
-                <FontAwesomeIcon icon={faLessThan} onClick={previous} />
-                <FontAwesomeIcon icon={faGreaterThan} onClick={next} />
+                <div className="search_results">
+                    <WrappedResults
+                        {...props}
+                        elements={getPageElements()}
+                    />
+                </div>
+                <div className="search_results_navigation">
+                    <FontAwesomeIcon icon={faLessThan} className="navigation_button" onClick={previous} />
+                    <FontAwesomeIcon icon={faGreaterThan} className="navigation_button" onClick={next} />
+                </div>
             </>
         );
     };

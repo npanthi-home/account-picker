@@ -6,6 +6,7 @@ import Results from './Results';
 import withCategorization from './withCategorization';
 import withOrder from './withOrder';
 import withSearchFilter from './withSearchFilter';
+import './index.scss';
 
 const Search = ({ elements, matchResult, renderResult, groupBy, sortBy, pageSize }) => {
     const [searchKeyword, setSearchKeyword] = useState('');
@@ -17,7 +18,7 @@ const Search = ({ elements, matchResult, renderResult, groupBy, sortBy, pageSize
     const SearchedResults = withSearchFilter(SortedResults, match)
 
     return (
-        <>
+        <div className="search">
             <SearchInput onSearch={(keyword) => setSearchKeyword(keyword)} />
             <SearchedResults 
                 elements={elements}
@@ -25,7 +26,7 @@ const Search = ({ elements, matchResult, renderResult, groupBy, sortBy, pageSize
                 renderResult={renderResult}
                 sortBy={sortBy} 
             />
-        </>
+        </div>
     );
 };
 

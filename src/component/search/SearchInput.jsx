@@ -3,7 +3,12 @@ import PropTypes from 'prop-types'
 
 const SearchInput = ({ onSearch }) => {
     return (
-        <input type="text" onChange={(event) => onSearch(event.target.value)} />
+        <input
+            type="text"
+            className="search_input"
+            placeholder="search accounts"
+            onChange={(event) => onSearch(event.target.value)}
+        />
     )
 }
 

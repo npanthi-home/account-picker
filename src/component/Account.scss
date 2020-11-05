@@ -1,0 +1,49 @@
+@import '../styles/colors.scss';
+@import '../styles/fonts.scss';
+
+.account-light {
+    margin: 10px auto;
+    display:flex;
+    border: 1px dotted $dark;
+    padding: 10px 20px;
+    .main {
+        display:flex;
+        flex-direction: column;
+        flex-grow: 8;
+        .username {
+            @extend .global-heading-4;
+            color: $purple;
+        }
+    }
+    .sidePanel {
+        color: $purple;
+        display:flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+    }
+}
+
+.account {
+    margin: 10px auto;
+    display:flex;
+    border: 1px dotted $extra-light;
+    padding: 10px 20px;
+    background: $dark;
+    .main {
+        display:flex;
+        flex-direction: column;
+        flex-grow: 8;
+        .username {
+            @extend .global-heading-4;
+            color: $light-green;
+        }
+    }
+    .sidePanel {
+        color: $light-green;
+        display:flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+    }
+}

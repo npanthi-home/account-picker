@@ -1,0 +1,32 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.search {
+    width: 50%;
+    margin: 50px auto;
+    .search_input {
+        border: 2px solid $light;
+        border-radius: 4px;
+        padding: 2%;
+        width: 96%;
+        font-size:18px;
+    }
+
+    .search_results {
+        height: 500px;
+        .search_group {
+            margin: 50px auto;
+            .title {
+                @extend .global-heading-3;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .search_results_navigation {
+        .navigation_button {
+            @extend .global-heading-2;
+            padding: 10px;
+        }
+    }
+}
