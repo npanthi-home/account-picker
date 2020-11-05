@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ThemeContextProvider from './context/theme/ThemeContext';
+import store from './state/store'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeContextProvider>
-      <App />
-    </ThemeContextProvider>
+    <Provider store={store}>
+      <ThemeContextProvider>
+        <App />
+      </ThemeContextProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

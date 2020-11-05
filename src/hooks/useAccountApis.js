@@ -1,35 +1,39 @@
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as AccountActions from '../state/action/account.action';
 
 const useAccountApis = (ownerId) => {
-    const fetchAccounts = (callback) => {
+    const dispatch = useDispatch();
+    const actions =  bindActionCreators({ ...AccountActions }, dispatch);
+
+    const fetchAccounts = () => {
         axios({
             url: `http://localhost:8000/account/owner/${ownerId}`,
             method: 'GET',
         }).then((response) => {
-            callback(response.data);
+            actions.fetchAll(response.data);
         })
     };
 
-    const markFavorite = (account, callback) => {
+    const markFavorite = (account) => {
         const favoriteStatus = !account.favorite;
         axios({
             url: `http://localhost:8000/account/favorite/${favoriteStatus}`,
             method: 'PUT',
             data: account,
         }).then((response) => {
-            account.favorite = response.data.favorite || account.favorite;
-            callback && callback(response.data);
+            actions.markFavorite(response.data);
         })
     };
 
-    const accessAccount = (account, callback) => {
+    const accessAccount = (account) => {
         axios({
             url: `http://localhost:8000/account`,
             method: 'PUT',
             data: account,
         }).then((response) => {
-            account.lastAccessed = response.data.lastAccessed || account.lastAccessed;
-            callback && callback(response.data);
+            actions.access(response.data);
         })
     };
 
@@ -39,7 +43,7 @@ const useAccountApis = (ownerId) => {
             method: 'POST',
             data: account,
         }).then((response) => {
-            callback(response.data);
+            actions.create(response.data);
         })
     };
 

@@ -8,7 +8,7 @@ function App() {
   
   return (
       <div className={`app ${theme}`}>
-        <AccountPicker accounts={[]} />
+        <AccountPicker />
       </div>
   );
 }

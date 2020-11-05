@@ -1,20 +1,19 @@
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
-import Account from './Account';
-import Search from './search';
-import './AccountPicker.scss';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import DarkModeCheckbox from '../context/theme/DarkModeCheckbox';
 import useAccountApis from '../hooks/useAccountApis';
+import Account from './Account';
+import './AccountPicker.scss';
+import Search from './search';
 
 const AccountPicker = ({ accounts }) => {
     const { fetchAccounts } = useAccountApis('1181c201-6faf-4500-9ce2-3acc01bbe47d');
-    const [loadedAccounts, setLoadedAccounts] = useState([]);
-    
+    const loadedAccounts = useSelector(state => state.account.accounts);
+
     useEffect(() => {
-        if (accounts && accounts.length > 0) {
-            setLoadedAccounts(accounts);
-        } else {
-            fetchAccounts((accounts) => setLoadedAccounts(accounts));
+        if (!accounts) {
+            fetchAccounts();
         }
     }, [accounts]);
 
@@ -29,7 +28,7 @@ const AccountPicker = ({ accounts }) => {
             <span className="heading">Choose an account</span>
             <DarkModeCheckbox />
             <Search
-                elements={loadedAccounts}
+                elements={accounts || loadedAccounts}
                 renderResult={renderAccount}
                 matchResult={matchAccount}
                 groupBy='category'
@@ -48,7 +47,11 @@ AccountPicker.propTypes = {
         email: PropTypes.string,
         favorite: PropTypes.bool,
         lastAccessed: PropTypes.number,
-    })).isRequired,
+    })),
+};
+
+AccountPicker.defaultProps = {
+    accounts: null,
 };
 
 export default AccountPicker;
