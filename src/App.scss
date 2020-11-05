@@ -2,9 +2,13 @@
 @import './styles/colors.scss';
 @import './styles/fonts.scss';
 
-body {
+.app {
+  height: 100vh;
   font-family: $font-montserrat;
   font-size: 16px;
+}
+
+.dark {
   background: $extra-dark;
   color: $extra-light;
 }

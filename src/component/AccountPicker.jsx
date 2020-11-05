@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Account from './Account';
 import Search from './search';
+import './AccountPicker.scss';
+import DarkModeCheckbox from '../context/theme/DarkModeCheckbox';
 
 const AccountPicker = ({ accounts }) => {
     const renderAccount = (account) => <Account key={account.id} account={account} />;
@@ -11,7 +13,9 @@ const AccountPicker = ({ accounts }) => {
     const lastAccessedComparator = (account1, account2) => account1.lastAccessed - account2.lastAccessed;
 
     return (
-        <>
+        <div className="account_picker">
+            <span className="heading">Choose an account</span>
+            <DarkModeCheckbox />
             <Search
                 elements={accounts}
                 renderResult={renderAccount}
@@ -20,7 +24,7 @@ const AccountPicker = ({ accounts }) => {
                 sortBy={lastAccessedComparator}
                 pageSize={3}
             />
-        </>
+        </div>
     );
 };
 
