@@ -29,7 +29,7 @@ const useAccountApis = (ownerId) => {
 
     const accessAccount = (account) => {
         axios({
-            url: `http://localhost:8000/account`,
+            url: `http://localhost:8000/account/access`,
             method: 'PUT',
             data: account,
         }).then((response) => {

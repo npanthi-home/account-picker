@@ -13,7 +13,7 @@ const Account = ({ account }) => {
 
     return (
         <div className={`account ${theme}`}>
-            <div className="main">
+            <div className="main" onClick={() => accessAccount(account)}>
                 <span className="username">{account.username}</span>
                 <span className="email">{account.email}</span>
                 {/* <span className="lastAccessed">{account.lastAccessed}</span> */}
