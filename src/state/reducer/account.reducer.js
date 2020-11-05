@@ -8,16 +8,16 @@ export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_ALL: {
             return { 
-                ...initialState,
+                ...state,
                 accounts: action.accounts,
             };
         }
 
         case MARK_FAVORITE:
         case ACCESS: {
-            const remainingAccounts = initialState.accounts.filter((account) => account.id !== action.account.id);
+            const remainingAccounts = state.accounts.filter((account) => account.id !== action.account.id);
             return { 
-                ...initialState,
+                ...state,
                 accounts: [
                     ...remainingAccounts,
                     action.account,
@@ -27,15 +27,15 @@ export const reducer = (state = initialState, action) => {
 
         case CREATE: {
             return { 
-                ...initialState,
+                ...state,
                 accounts: [
-                    ...initialState.accounts,
+                    ...state.accounts,
                     action.account,
                 ],
             };
         }
 
         default: 
-            return initialState;
+            return state;
     }
 }

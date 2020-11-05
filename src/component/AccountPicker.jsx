@@ -8,6 +8,7 @@ import useAccountApis from '../hooks/useAccountApis';
 import Account from './Account';
 import './AccountPicker.scss';
 import Search from './search';
+import NewAccountForm from './form/account/NewAccountForm';
 
 const AccountPicker = ({ accounts }) => {
     const { fetchAccounts, createNewAccount } = useAccountApis('1181c201-6faf-4500-9ce2-3acc01bbe47d');
@@ -47,6 +48,7 @@ const AccountPicker = ({ accounts }) => {
                 sortBy={lastAccessedComparator}
                 pageSize={3}
             />
+            <NewAccountForm />
         </div>
     );
 };

@@ -1,0 +1,46 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/fonts.scss';
+
+.new_form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        margin: 2px auto;
+        border: 2px solid $light;
+        border-radius: 4px;
+        padding: 10px;
+        font-size:18px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        .submit_button {
+            width: 50%;
+            &.light {
+                background: $purple;
+                color: $extra-light;
+            }
+
+            &.dark {
+                background: $dark-green;
+                color: $extra-light;
+            }
+        }
+
+        .cancel_button {
+            width: 50%;
+        }
+    }
+
+    .input_box {
+        margin: 2px auto;
+        border: 2px solid $light;
+        border-radius: 4px;
+        padding: 10px;
+        width: 96%;
+        font-size:18px;
+    }
+
+   
+}

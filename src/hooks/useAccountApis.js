@@ -41,7 +41,10 @@ const useAccountApis = (ownerId) => {
         axios({
             url: `http://localhost:8000/account`,
             method: 'POST',
-            data: account,
+            data: {
+                ...account,
+                ownerId,
+            },
         }).then((response) => {
             actions.create(response.data);
         })
