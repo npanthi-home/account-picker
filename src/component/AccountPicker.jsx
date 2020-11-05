@@ -24,7 +24,7 @@ const AccountPicker = ({ accounts }) => {
     const matchAccount = (keyword, account) => {
         return account.email.includes(keyword) || account.username.includes(keyword);
     }
-    const lastAccessedComparator = (account1, account2) => account1.lastAccessed - account2.lastAccessed;
+    const lastAccessedComparator = (account1, account2) => account2.lastAccessed - account1.lastAccessed;
 
     return (
         <div className="account_picker">
