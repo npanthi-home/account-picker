@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import DarkModeCheckbox from '../context/theme/DarkModeCheckbox';
 import useAccountApis from '../hooks/useAccountApis';
 import Account from './Account';
@@ -8,7 +10,7 @@ import './AccountPicker.scss';
 import Search from './search';
 
 const AccountPicker = ({ accounts }) => {
-    const { fetchAccounts } = useAccountApis('1181c201-6faf-4500-9ce2-3acc01bbe47d');
+    const { fetchAccounts, createNewAccount } = useAccountApis('1181c201-6faf-4500-9ce2-3acc01bbe47d');
     const loadedAccounts = useSelector(state => state.account.accounts);
 
     useEffect(() => {
@@ -26,7 +28,17 @@ const AccountPicker = ({ accounts }) => {
     return (
         <div className="account_picker">
             <span className="heading">Choose an account</span>
-            <DarkModeCheckbox />
+            <div className="actions">
+                <div className="dark_check">
+                    <DarkModeCheckbox />
+                </div>
+                <div className="new_account">
+                    <FontAwesomeIcon
+                        icon={faPlus}
+                        onClick={() => createNewAccount()}
+                    />
+                </div>
+            </div>
             <Search
                 elements={accounts || loadedAccounts}
                 renderResult={renderAccount}

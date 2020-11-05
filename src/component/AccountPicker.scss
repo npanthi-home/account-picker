@@ -11,8 +11,13 @@
         @extend .global-heading-1; 
     }
     
-    .dark_mode_checkbox {
+    .actions {
         padding-top: 20px;
         padding-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        .dark_check {
+            flex-grow: 1;
+        }
     }
 }
